@@ -76,7 +76,7 @@ const App: () => Node = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> <Icon name="rocket" size={30} color="#900"/>
+            Edit <Text style={styles.highlight}>App.j</Text> <Icon name="rocket" size={30} color="#900"/>
              to change this
             screen and then come back to see your edits.
           </Section>
