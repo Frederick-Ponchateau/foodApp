@@ -24,7 +24,11 @@ const styles = StyleSheet.create({
             flexDirection:"row",
             marginHorizontal:15,          
             marginTop:30,
-            }      
+            },
+        loadMenu:{
+                paddingHorizontal:200,
+                paddingVertical:200
+            }
 })
 
 export default styles;

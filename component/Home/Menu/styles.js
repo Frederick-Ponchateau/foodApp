@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
     imageMenu:{
         height:40,
         width:40
+    },
+    loadMenu:{
+        paddingHorizontal:200
     }
 
 })

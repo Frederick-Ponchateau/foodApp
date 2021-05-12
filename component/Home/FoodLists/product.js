@@ -6,7 +6,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-const Product = ({onPress,marginTop,image,title,price,description}) => {
+const Product = ({onPress,image,title,price,description}) => {
     return (
         <TouchableOpacity 
         onPress={onPress}
@@ -15,7 +15,8 @@ const Product = ({onPress,marginTop,image,title,price,description}) => {
             height:280,
             width:160,
             borderRadius:20,
-            marginTop:marginTop,
+            marginVertical:15,
+            marginHorizontal:20,
             marginRight:10  
         }}>
     

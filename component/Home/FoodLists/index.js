@@ -1,5 +1,5 @@
 import React, {useState,useContext,useEffect} from 'react';
-import { View, Text,FlatList } from 'react-native';
+import { View, Text,FlatList,ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Product from './product';
 import styles from './styles';
@@ -22,7 +22,7 @@ const renderProduct = ({item}) =>{
 }
 const FoodLists = () => {
     const [products, setProducts] = useState([]);
-
+    const [isLoading , setIsLoading]= useState(false);
      /***************** 
      * * Context utile 
      *****************/
@@ -34,7 +34,7 @@ const FoodLists = () => {
        *****************************************************/
       useEffect(()=>{
           
-  
+        setIsLoading(true);
           const produitSubscriber= 
           /*****************
            * * Context Data sort
@@ -48,6 +48,7 @@ const FoodLists = () => {
                 ProductData = [...ProductData,{id: data.id,...data.data()}]
               })
               setProducts(ProductData)
+              setTimeout (()=> setIsLoading(false), 5000);
             
           })
           console.log("use effect  : ",products)
@@ -73,14 +74,16 @@ const FoodLists = () => {
             </View>
             
             <View style={styles.listProd} >
-          
+            {(products.length > 0 && !isLoading)?
                 <FlatList
+                
                     data={products}
                     numColumns={2}
                     renderItem={renderProduct}
                     keyExtractor={item => item.id}
                 />
-                   
+                :    (<View style={styles.loadMenu}><ActivityIndicator size="large" color="#0000ff" /></View>) } 
+    
                     
                     
             </View> 

@@ -14,5 +14,11 @@ class Firebase{
     getDataSort = (colection,champ ,order) => firestore()
         .collection(colection)
         .orderBy(champ,order)
+
+    collectionAddProduit = (data) => firestore()
+        .collection('produits')
+        .add(data)
+
 }
+
 export default Firebase;
