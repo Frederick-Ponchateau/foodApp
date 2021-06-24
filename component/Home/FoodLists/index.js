@@ -17,7 +17,7 @@ const renderProduct = ({item}) =>{
         title={item.name}
         price={item.price}
         description={item.description}
-        onPress={() => this.props.navigation.navigate('Detail') }/> 
+        onPress={() =>console.log("test") /*this.props.navigation.navigate('Detail')*/ }/> 
     )
 }
 const FoodLists = () => {
